@@ -13,6 +13,9 @@ public class TugasJavaBasic {
         int Menu1 = 0;
         int Menu2 = 0;
         int Menu3 = 0;
+        int panjang = 0;
+        int meter;
+        int gram;
         String nama;
         String password;
         int pin = 123456789;
@@ -95,7 +98,7 @@ public class TugasJavaBasic {
                                                 System.out.print("Tinggi = ");
                                                 t = input.nextInt();
                                                 System.out.println(
-                                                        "Hasil dari luas segitiga adalah: " + (1 / 2 * a * t)
+                                                        "Hasil dari luas segitiga adalah: " + (1 * a * t / 2)
                                                                 + " Meter Kuadrat");
                                                 break;
                                             case 4:
@@ -103,7 +106,7 @@ public class TugasJavaBasic {
                                                 System.out.println("Rumus Lingkaran => phi*r*r");
                                                 System.out.print("r = ");
                                                 r = input.nextInt();
-                                                System.out.println("Hasil Rumus Yang Anda Input : " + (π * r * r)
+                                                System.out.println("Hasil Rumus Yang Anda Input : " + (22 * r * r / 7)
                                                         + " Meter Kuadrat");
                                                 break;
                                             default:
@@ -111,6 +114,7 @@ public class TugasJavaBasic {
                                                 break;
                                         }
                                     } while (Menu2 < 5);
+                                    break;
 
                                 case 2:
                                     do {
@@ -147,22 +151,25 @@ public class TugasJavaBasic {
                                                 System.out.println("Masukkan jari-jari bola dengan satuan Meter: ");
                                                 r = input.nextInt();
                                                 System.out.println("Jadi hasil dari Volume Bola adalah: "
-                                                        + (4 / 3 * π * r * r * r * 1000) + "Liter");
+                                                        + (4 * 22 * r * r * r / 3 / 7) + "Liter");
                                                 break;
                                             default:
+                                            System.out.println("Exit");
                                                 break;
                                         }
                                     } while (Menu2 < 3);
 
                                 default:
+                                System.out.println("Exit");
                                     break;
                             }
                         } while (Menu1 < 3);
+                        break;
 
                     case 2:
                         do {
                             System.out.println("<==Konversi==>");
-                            System.out.println("1.Derajat \n 2.Panjang(Meter) \n 3.Berat(gram) \n 4.Exit");
+                            System.out.println("\n 1.Derajat \n 2.Panjang(Meter) \n 3.Berat(gram) \n 4.Exit");
                             System.out.print("Masukkan nomor: ");
                             Menu1 = input.nextInt();
 
@@ -282,17 +289,106 @@ public class TugasJavaBasic {
                                                 break;
                                         }
                                     } while (Menu2 < 3);
+                                    break;
+
+                                    case 2:
+                                    // Menu Tangga Ukuran Panjang
+                                    do {
+                                        System.out.println("Mengonversi Satuan Meter Ke yg di bawah ;");
+                                        System.out.println(" 1.Km \n 2.hm \n 3.dam \n 4.dm \n 5.cm \n 6.mm \n 7.Exit");
+                                        System.out.print("Pilih Untuk Mengonversi Meter :");
+                                        panjang = input.nextInt();
+                                        // Switch Untuk Membungkus Semua Menu Tangga Ukuran Panjang
+                                        switch (panjang) {
+                                            case 1:
+                                                System.out.println("Konversi Meter => Kilometer ");
+                                                meter = input.nextInt();
+                                                System.out.println("Hasil " + (meter / 1000) + "Km");
+                                                    break;
+                                            case 2:
+                                                System.out.println("Konversi Meter => HektaMeter ");
+                                                meter = input.nextInt();
+                                                System.out.println("Hasil " + (meter / 100) + "Hm");
+                                                break;
+                                            case 3:
+                                                System.out.println("Konversi Meter => Dam ");
+                                                meter = input.nextInt();
+                                                System.out.println("Hasil " + (meter / 10) + "Dam");
+                                                break;
+                                            case 4:
+                                                System.out.println("Konversi Meter => DesiMeter ");
+                                                meter = input.nextInt();
+                                                System.out.println("Hasil " + (meter * 10) + "Dm");
+                                                break;
+                                            case 5:
+                                                System.out.println("Konversi Meter => CentiMeter ");
+                                                meter = input.nextInt();
+                                                System.out.println("Hasil " + (meter * 100) + "Cm");
+                                                break;
+                                            case 6:
+                                                System.out.println("Konversi Meter => MiliMeter ");
+                                                meter = input.nextInt();
+                                                System.out.println("Hasil " + (meter * 1000) + "Mm");
+                                                break;
+                                        }
+                                    } while (panjang < 7);
+                                    break;
+                                    // Tangga Ukuran Berat (Gram)
+                                  case 3:
+                                  do {
+                                    System.out.println("Mengonversi Satuan Gram Ke yg di bawah ;");
+                                    System.out.println(" 1.Kg \n 2.Hg \n 3.Dag \n 4.Dg \n 5.Cg \n 6.Mg \n 7.Exit");
+                                    System.out.print("Pilih Untuk Mengonversi Meter :");
+                                    panjang = input.nextInt();
+                                    // Switch Untuk Membungkus Semua Menu Tangga Ukuran Panjang
+                                    switch (panjang) {
+                                        case 1:
+                                            System.out.println("Konversi Gram => Kilogram ");
+                                            gram = input.nextInt();
+                                            System.out.println("Hasil " + (gram / 1000) + "Kg");
+                                                break;
+                                        case 2:
+                                            System.out.println("Konversi Gram => Hektagram ");
+                                            gram = input.nextInt();
+                                            System.out.println("Hasil " + (gram / 100) + "Hg");
+                                            break;
+                                        case 3:
+                                            System.out.println("Konversi Gram => Dekagram ");
+                                            gram = input.nextInt();
+                                            System.out.println("Hasil " + (gram / 10) + "Dag");
+                                            break;
+                                        case 4:
+                                            System.out.println("Konversi Gram => Desigram ");
+                                            gram = input.nextInt();
+                                            System.out.println("Hasil " + (gram * 10) + "Dg");
+                                            break;
+                                        case 5:
+                                            System.out.println("Konversi Gram => Centigram ");
+                                            gram = input.nextInt();
+                                            System.out.println("Hasil " + (gram * 100) + "Cg");
+                                            break;
+                                        case 6:
+                                            System.out.println("Konversi Gram => Miligram ");
+                                            gram = input.nextInt();
+                                            System.out.println("Hasil " + (gram * 1000) + "Mg");
+                                            break;
+                                    }
+                                } while (panjang < 7);
+                                break;
+
                             }
+                              
 
                         } while (Menu1 < 4);
+                        break;
+                        
 
                     case 3:
+                    System.out.println("Secret Menu: ");
+                    System.out.println("Untuk mengakses secret menu harus mengiput nilai unik: ");
+                    Menu = input.nextInt();
+                    if (password.length() > 7 &&  password.length() < 10) {
                         do {
-                            System.out.println("Secret Menu: ");
-                            System.out.println("Untuk mengakses secret menu harus mengiput nilai unik: ");
-                            password = input.nextLine();
-                            if (password.length() < 10) {
-
                                 int A;
                                 System.out.println("Silahkan pilih menu rahasia:");
                                 System.out.println("1.Uppercase \n 2.Lowercase \n 3.Reverse \n 4.Exit");
@@ -312,26 +408,28 @@ public class TugasJavaBasic {
                                         System.out.println(lorem);
                                         break;
 
-                                    // case 3:
-                                    // List<String> list = Arrays.asList(lorem.split(" "));
-                                    // Collections.reverse(list);
-                                    // System.out.println(
-                                    // String.join(" ", list)
-                                    // );
-                                    // break;
+                                    case 3:
+                                    input.nextLine();
+                                    lorem=input.nextLine();
+                                    List<String> list = Arrays.asList(lorem.split(" "));
+                                    Collections.reverse(list);
+                                    System.out.println(
+                                    String.join(" ", list)
+                                    );
+                                    break;
 
                                     default:
                                         System.out.println("Exit");
                                         break;
                                 }
-                            } else {
-                                System.out.println("Aksess ditolak");
-                            }
-
-                        } while (Menu < 3);
-
-                }
-
+                                
+                            } while (Menu < 3);
+                        } else {
+                            System.out.println("Aksess ditolak");
+                        }
+                            
+                        }
+                        
             } while (Menu < 4);
             System.out.println("Exit");
             input.close();
